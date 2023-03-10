@@ -15,21 +15,21 @@
             <div class="col">
                 <div class="inputBox" style="padding-bottom: 53px;">
                     <span>Provider: </span>
-                    <select id="multichoiceselect" onchange="myFunction()">
+                    <select id="multichoiceselect">
                         <option value="1">Select Decoder Type..</option>
                         <option value="2">GOTV</option>
                         <option value="3">DSTV</option>
                     </select>
                 </div>
-                <div id="inputBox" class="inputBox" style="padding-bottom: 150px;">
+                <div class="inputBox" style="padding-bottom: 150px;">
                     <span>Package: </span>
                     <select id="mySelect"></select>
                 </div>
             </div>
         </div>
         <p style="padding-bottom: 10px; font-weight: 900; font-family: var(--Abel);" id="demo"></p>
-        <input onclick="secondFunction()" type="button" value="Proceed to Payment" class="submit-btn">
-        <input onclick="window.location.href='/index.php'" type="button" value="Back to Home" class="home-btn">
+        <input id="proceeder" type="button" value="Proceed to Payment" class="submit-btn">
+        <input onclick="window.location.href='/index.html'" type="button" value="Back to Home" class="home-btn">
         </form>
     </div>
 

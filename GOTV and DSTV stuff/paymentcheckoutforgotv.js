@@ -1,83 +1,86 @@
 const mySelect = document.getElementById("mySelect");
-const firstSelect = document.createElement("select");
-const newSelect = document.createElement("select");
-let newOption = new Option('Select Package..', '4');
-let secondOption = new Option('GOTV SUPA - ₦ 5,500/Month', '16');
-let thirdOption = new Option('GOTV MAX - ₦ 4,150/Month', '6');
-let fourthOption = new Option('GOTV JOLLI - ₦ 2,800/Month', '7');
-let fifthOption = new Option('GOTV JINJA - ₦ 1,900/Month', '8');
-let sixthOption = new Option('GOTV SMALLIE', '9');
-let seventhOption = new Option('DSTV PREMIUM - 21,000/Month', '10');
-let eightOption = new Option('DSTV COMPACT PLUS - ₦ 14,250/Month', '11');
-let ninthOption = new Option('DSTV COMPACT - ₦ 9,000/Month', '12');
-let tenthOption = new Option('DSTV CONFAM - ₦ 5,300/Month', '13');
-let eleventhOption = new Option('DSTV YANGA - ₦ 2,950/Month', '14');
-let twelvethOption = new Option('DSTV PADI - ₦ 2,150/Month', '15');
-let secondnewOption = new Option('Select Package..', '16');
+const gotvSelect = document.createElement("select");
+const dstvSelect = document.createElement("select");
 
-firstSelect.appendChild(newOption);
-firstSelect.appendChild(secondOption);
-firstSelect.appendChild(thirdOption);
-firstSelect.appendChild(fourthOption);
-firstSelect.appendChild(fifthOption);
-firstSelect.appendChild(sixthOption);
+const firstOption = new Option('Select Package..', '4');
+const secondOption = new Option('GOTV SUPA - ₦ 5,500/Month', '5');
+const thirdOption = new Option('GOTV MAX - ₦ 4,150/Month', '6');
+const fourthOption = new Option('GOTV JOLLI - ₦ 2,800/Month', '7');
+const fifthOption = new Option('GOTV JINJA - ₦ 1,900/Month', '8');
+const sixthOption = new Option('GOTV SMALLIE', '9');
 
-newSelect.appendChild(secondnewOption);
-newSelect.appendChild(seventhOption);
-newSelect.appendChild(eightOption);
-newSelect.appendChild(ninthOption);
-newSelect.appendChild(tenthOption);
-newSelect.appendChild(eleventhOption);
-newSelect.appendChild(twelvethOption);
+const seventhOption = new Option('Select Package..', '10');
+const eightOption = new Option('DSTV PREMIUM - 21,000/Month', '11');
+const ninthOption = new Option('DSTV COMPACT PLUS - ₦ 14,250/Month', '12');
+const tenthOption = new Option('DSTV COMPACT - ₦ 9,000/Month', '13');
+const eleventhOption = new Option('DSTV CONFAM - ₦ 5,300/Month', '14');
+const twelvethOption = new Option('DSTV YANGA - ₦ 2,950/Month', '15');
+const thirteenthOption = new Option('DSTV PADI - ₦ 2,150/Month', '16');
 
+gotvSelect.appendChild(firstOption);
+gotvSelect.appendChild(secondOption);
+gotvSelect.appendChild(thirdOption);
+gotvSelect.appendChild(fourthOption);
+gotvSelect.appendChild(fifthOption);
+gotvSelect.appendChild(sixthOption);
 
-function myFunction(){
+dstvSelect.appendChild(seventhOption);
+dstvSelect.appendChild(eightOption);
+dstvSelect.appendChild(ninthOption);
+dstvSelect.appendChild(tenthOption);
+dstvSelect.appendChild(eleventhOption);
+dstvSelect.appendChild(twelvethOption);
+dstvSelect.appendChild(thirteenthOption);
+
+document.getElementById("multichoiceselect").addEventListener("change", function(){
     if(document.getElementById("multichoiceselect").value == 2){
-        document.getElementById("inputBox").appendChild(firstSelect);
-        mySelect.remove();
-        newSelect.remove();
+        dstvSelect.replaceWith(gotvSelect);
+        mySelect.replaceWith(gotvSelect);
         document.getElementById("demo").innerHTML = "REMINDER: GOTV SMALLIE - ₦ 900/Month, ₦ 2,400/Quarter, ₦ 7,000/Annum";
+    }else if(document.getElementById("multichoiceselect").value == 3){
+        mySelect.replaceWith(dstvSelect);
+        gotvSelect.replaceWith(dstvSelect);
+        document.getElementById("demo").innerHTML = "";
+    }else{
+        gotvSelect.replaceWith(mySelect);
+        dstvSelect.replaceWith(mySelect);
+        document.getElementById("demo").innerHTML = "";
+    };
+});
+
+document.getElementById("proceeder").addEventListener("click", function(){
+    if(document.getElementById("multichoiceselect").value == 2 && gotvSelect.value == 5){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvsupa.php";
     }
-    else if(document.getElementById("multichoiceselect").value == 3){
-        document.getElementById("inputBox").appendChild(newSelect);
-        firstSelect.remove();
-        mySelect.remove();
-        newSelect.value == 4;
-        document.getElementById("demo").style.display = "none";
+    else if(document.getElementById("multichoiceselect").value == 2 && gotvSelect.value == 6){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvmax.php";
     }
-};
-// function secondFunction(){
-//     if(firstSelect.value == 5){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvsupa.php";
-//     }
-//     if(firstSelect.value == 6){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvmax.php";
-//     }
-//     if(firstSelect.value == 7){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvjolli.php";
-//     }
-//     if(firstSelect.value == 8){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvjinja.php";
-//     }
-//     if(firstSelect.value == 9){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvsmallie.php";
-//     }
-//     if(newSelect.value == 10){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvpremium.php";
-//     }
-//     if(newSelect.value == 11){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvcompactplus.php";
-//     }
-//     if(newSelect.value == 12){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvcompact.php";
-//     }
-//     if(newSelect.value == 13){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvconfam.php";
-//     }
-//     if(newSelect.value == 14){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvyanga.php";
-//     }
-//     if(newSelect.value == 15){
-//         window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvpadi.php";
-//     };
-// };
+    else if(document.getElementById("multichoiceselect").value == 2 && gotvSelect.value == 7){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvjolli.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 2 && gotvSelect.value == 8){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvjinja.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 2 && gotvSelect.value == 9){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayforgotvsmallie.php";
+    }
+    
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 11){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvpremium.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 12){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvcompactplus.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 13){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvcompact.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 14){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvconfam.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 15){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvyanga.php";
+    }
+    else if(document.getElementById("multichoiceselect").value == 3 && dstvSelect.value == 16){
+        window.location.href="/GOTV and DSTV stuff/paymentgatewayfordstvpadi.php";
+    }
+});
