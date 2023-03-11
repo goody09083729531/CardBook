@@ -29,7 +29,7 @@
         </div>
         <p style="padding-bottom: 10px; font-weight: 900; font-family: var(--Abel);" id="demo"></p>
         <input id="proceeder" type="button" value="Proceed to Payment" class="submit-btn">
-        <input onclick="window.location.href='/index.html'" type="button" value="Back to Home" class="home-btn">
+        <input onclick="window.location.href='/index.php'" type="button" value="Back to Home" class="home-btn">
         </form>
     </div>
 

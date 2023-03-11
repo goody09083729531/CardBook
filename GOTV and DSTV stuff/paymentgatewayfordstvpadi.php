@@ -84,7 +84,7 @@
 
         <input type="submit" value="Make Your Payment" class="submit-btn">
         <input onclick="window.history.back();" type="button" value="Back to Checkout" class="checkout-btn">
-        <input onclick="window.location.href='/index.html'" type="button" value="Back to Home" class="home-btn">
+        <input onclick="window.location.href='/index.php'" type="button" value="Back to Home" class="home-btn">
         </form>
     </div>
 </body>
